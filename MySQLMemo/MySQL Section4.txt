@@ -1,0 +1,14 @@
+1. insert문 (데이터 삽입)
+Insert Into <Table name> (name,age)
+Values('Jetson',7);
+
+=> 테이블 이름 옆 ()은 칼럼 명이 들어가고, Values 옆 ()은 데이터가 들어간다.
+=> 데이터 타입은 순서를 지켜야 한다./ 순서라는 것은 칼럼의 순서가 아니다.
+
+ex) Insert Into <Table name> (age,name)
+Values(7,'Jetson'); => 이러한 방식으로 테이블 이름 옆 칼럼의 데이터 타입 순서를 지켜야 한다는 뜻이다.
+
+2. 다중 Insert
+Insert Into <Table Name> (name,age)
+values('qwe',1),('rty',1),('uio',1),('asd',1);
+=> values에 계속해서 붙이면 된다.
