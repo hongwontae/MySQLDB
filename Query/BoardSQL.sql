@@ -1,9 +1,9 @@
 show databases;
 create database chicken_coop;
-drop database per_shop;
+drop database pet_shop;
 
-Use chicken_coop;
-select dataBASE();
+Use chicken_coop; = --set as default schema
+select dataBASE(); -- 선택한 데이터 베이스는 무엇이냐?
 
 Create database pet_shop;
 use pet_shop;
@@ -20,12 +20,12 @@ create table dogs (
     age int
 );
 
-show tables;
+show tables; -- 현재 데이터 베이스의 테이블을 나열한다.
 
 show columns from dogs;
 show columns from cats;
 
-desc cats;
+desc cats; -- 테이블의 칼럼을 자세히 보여줌
 desc dogs;
 
 drop table cats;
