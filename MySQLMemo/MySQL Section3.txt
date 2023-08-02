@@ -1,6 +1,6 @@
 MySQL 1주차
 
-sql => db에 접근할 명령어
+sql => db의 데이터를 가공하는 명령어
 
 1. show databases => 현재 존재하는 데이터베이스들을 나열하는 명령어
 2. Create Database <name> => 데이터베이스를 생성하는 명령어
@@ -23,7 +23,7 @@ sql 데이터 타입
 	column_name data_type
 	) => 테이블과 칼럼을 만드는 명령어
 
-8. show table => set as default schema에 해당되는 db의 테이블들을 보여준다.
+8. show tables => set as default schema에 해당되는 db의 테이블들을 보여준다.
 
 9. Show Columns from <table name> => 해당 테이블의 칼럼들을 자세히 보여준다.
 

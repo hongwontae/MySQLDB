@@ -42,3 +42,4 @@ insert into Employees (last_name, first_name, age) values ('aaa','bbb',15);
 
 select * from Employees;
 
+
