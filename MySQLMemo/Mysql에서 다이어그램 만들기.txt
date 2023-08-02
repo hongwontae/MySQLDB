@@ -1,0 +1,4 @@
+Mysql에서 다이어그램 만들기
+
+1. 왼쪽 상단에서 database => Reverse Engineer 클릭
+2. next 누르면 만들어진다.
