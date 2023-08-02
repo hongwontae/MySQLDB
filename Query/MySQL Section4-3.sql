@@ -25,3 +25,20 @@ Insert Into unique_cats2 () values ();
 
 select * from unique_cats2; 
 
+-- Section4 last assignment
+Create table Employees (
+	id int auto_increment,
+    last_name varchar(20) not null,
+    first_name varchar(20) not null,
+    middle_name varchar(20),
+    age int not null,
+    current_status varchar(50) not null default 'employed',
+    primary key (id)
+);
+
+desc Employees;
+
+insert into Employees (last_name, first_name, age) values ('aaa','bbb',15);
+
+select * from Employees;
+
