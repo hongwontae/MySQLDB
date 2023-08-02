@@ -49,6 +49,14 @@ select * from cats3;
 Insert into cats3 (name, age) values (null, null);
 -- 이러한 방식으로 널 값이 들어간다.
 
+-- default + not null
+Create table hwt (
+	name varchar(100) Not Null Default 'koPunch',
+    age Int Not Null Default 26
+);
+
+desc hwt;
+
 
 
 

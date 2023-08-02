@@ -6,6 +6,7 @@ Create Table cat2 (
   age Int Not Null
 )
 
+
 2. Mysql 따옴표
 항상 작은 따옴표를 사용하는 것이 좋다. sql문을 쓰는 관행이다.
 
@@ -13,6 +14,7 @@ Create Table cat2 (
 ex) Insert into (name) values ('mario's whod')
 => 어퍼트로스피 s의 '도 따옴표로 인식한다. 이 문제를 해결하기 위해 따옴표 앞에 \ 백 슬래쉬를 추가하면 된다.
 => 큰 따옴표, 작은 따옴표 같이 \로직을 받아들인다.
+
 
 3. Default value
 default 제약조건 => 지정된 값이 없다면 기본적으로 default의 값이 설정되도록 제약조건을 주는 것을 의미한다.
@@ -28,15 +30,20 @@ ex) Create Table cat33 (
   age int Not Null Default 15	
 ) => 기본값만 걸어준 것
 
+
 4. 기본키 pk
 => 각 데이터들의 고유의 식별자는 항상 필요하다.
 => 데이터 처리를 용이하게 하기 위해서..
 기본키란 각각의 개별 행에 대한 고유 식별자로 사용되는 열을 의미한다.
 
+기본키 속성
+=> 기본키는 자동으로 null을 허용하지 않는다.
+=> 기본키는 자동으로 중복을 허용하지 않는다.
+
 기본키를 지정하는 방법
 
 1. ex) Create Table unique_cats(
-  cat_id Int PRIMARY_KEY,
+  cat_id Int PRIMARY KEY,
   name varchar(100) Not Null,
   age Int Not Null
 );
@@ -45,9 +52,22 @@ ex) Create Table cat33 (
   cat_id Int,
   name varchar(100) Not Null,
   age int Not Null,
-  PRIMARY_KEY (cat_id)
+  PRIMARY KEY (cat_id)
 )
 
+
+5. Auto_Increment
+자동 증가 제약 조건, 기본키의 값은 유일해야 하고 중복되면 안되기에 자동 증가 제약과 함께 사용하는 경우가 많다.
+
+ex) Create Table unique_cat2(
+  Cat_id Auto_Increment,
+  name varchar(50) Not Null,
+  age Int Not Null,
+  Primary_key(cat_id)
+)
+
+
+6. 제약조건
 
 
 
