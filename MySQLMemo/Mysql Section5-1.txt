@@ -11,8 +11,10 @@ ex) select * => 열 모두
 3. where
 행의 조건을 부여하는 속성을 가진 키워드이다.
 (where은 select에만 사용하는 것이 아니라 update, delete에도 사용이 가능하다.)
-ex) select * from cats age=4;
+ex) select * from cats where age=4;
 => 나이가 4살인 모든 칼럼의 행을 찾아라
+
+=> where은 항상 from 뒤에 나와야 한다.
 
 4. Aliases
 데이터를 프린트하거나 선택할 때 열의 이름을 다시 지정해서 더 짧고 이해하기 쉽게 만들어 주는 기능
