@@ -1,0 +1,41 @@
+1. UPDATAE
+ex) Update cats SET breed = 'ShortHair' Where breed='Tabby';
+업데이트는 set과 같이 다닌다./ set=> 칼럼의 where 조건을 바꾸고 싶다. where => 조건
+만약에 where 조건을 주지 않으면 모든 열을 바꾸게 된다.
+
+다수의 칼럼의 행을 바꾸는 방법
+Update cats set last_name='asd', age=14;
+=> 이름을 asd로 나이는 14로 모든 행을 change한다.
+
+update set where => 업데이트 명령문의 순서이다./ set은 바꿀 내용이고 where은 조건이다.
+
+2.Update cats set breed='cute' where breed='Tabby'
+Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column.  To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.
+=> MySQL은 자동으로 안전모드를 실행한다. 안전모드(다수의 행을 업데이트하는 것을 막는다.)
+=> 이를 해제하기 위해서
+2-1. set sql_safe_updates=0; 안전모드를 해제하는 일시적인 명령
+
+2-2. WorkBench Preferences에서 안전모드를 해제한다. 
+왼쪽 상단 edit => preferences => SQL Editor => 맨 밑에 있는 Safe Updates 해제한다.
+
+3. DELETE
+ex) delete from cats where age=14;
+age=14인 행을 모두 삭제한다.
+
+delete 명령문 순서
+delete from 테이블 명 where(조건)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -47,13 +47,69 @@ select * from t_board;
         b1_0.bno desc,
         b1_0.bno desc;
         
+            select
+        b1_0.bno,
+        b1_0.title,
+        b1_0.writer,
+        b1_0.reg_date,
+        count(distinct r1_0.rno)
+    from
+        t_board b1_0
+    left join
+        t_reply r1_0
+            on r1_0.board_bno=b1_0.bno
+    group by
+        b1_0.bno,
+        b1_0.content,
+        b1_0.mod_date,
+        b1_0.reg_date,
+        b1_0.title,
+        b1_0.writer,
+        b1_0.bno,
+        b1_0.content,
+        b1_0.mod_date,
+        b1_0.reg_date,
+        b1_0.title,
+        b1_0.writer
+    order by
+        b1_0.bno desc,
+        b1_0.bno desc limit 1,10;
         
         
         
         
         
         
-        use 83test;
+        
+use 83test;
+        
+   select
+        f1_0.f_bno,
+        f1_0.f_title,
+        f1_0.nickname,
+        f1_0.reg_date,
+        count(distinct f2_0.f_rno)
+    from
+        free_board f1_0
+    left join
+        free_reply f2_0
+            on f2_0.free_board_f_bno=f1_0.f_bno
+    group by
+        f1_0.f_bno,
+        f1_0.f_content,
+        f1_0.f_title,
+        f1_0.mod_date,
+        f1_0.nickname,
+        f1_0.reg_date,
+        f1_0.f_bno,
+        f1_0.f_content,
+        f1_0.f_title,
+        f1_0.mod_date,
+        f1_0.nickname,
+        f1_0.reg_date
+    order by
+        f1_0.f_bno desc,
+        f1_0.f_bno desc;
         
 		select
         f1_0.f_bno,
@@ -81,4 +137,4 @@ select * from t_board;
         f1_0.reg_date
     order by
         f1_0.f_bno desc,
-        f1_0.f_bno desc;
+        f1_0.f_bno desc limit 1,10;
