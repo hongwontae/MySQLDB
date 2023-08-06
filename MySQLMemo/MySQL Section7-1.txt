@@ -1,0 +1,15 @@
+문자열 함수
+
+1. CONCAT
+문자열을 연결하거나 결합하는 함수/ 다른 행에서 가져온 문자열들을 합치는 작업을 주로 한다.
+결과값을 얻기 위해서는 항상 select를 사용해야 한다.
+as 별칭은 항상 뒤에 나온다. select concat (fff,ddd) as fullName 항상 뒤에..
+ex) select concat(column1, column2) from tableName;
+
+2. CONCAT_WS
+with Separator => 첫 번쨰 값으로 나오는 인자를 결합되는 문자열 사이에 집어넣는다.
+
+3. SubString
+긴 문자열을 취해서 작은 문자열로 반환하는 함수이다.
+ex) SubString('Hello',1,4) / 처음 인자는 문자열, 두 번째 인자는 시작할 번호, 세 번째 인자는 마지막 번호
+substr => substring의 축약형이다.
