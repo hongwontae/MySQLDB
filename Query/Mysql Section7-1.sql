@@ -70,6 +70,23 @@ select subString('Hello World',-9,3);
 
 select substring(author_fname,1,1) as Inital from books;
 
+-- Seciont7/ 96
+-- 문자열 함수를 두 개를 사용해서 결합하는 방식이다.
+select concat(substr(title,1,10),' ...') as Comfile from books;
+
+select * from books;
+
+-- 이니셜 만들기
+select concat(substr(author_fname,1,1),'.', substr(author_lname,1,1)) as inital from books;
+
+
+-- SQL 포맷팅
+SELECT 
+    CONCAT(SUBSTR(author_fname, 1, 1),
+            '.',
+            SUBSTR(author_lname, 1, 1)) AS inital
+FROM
+    books;
 
 
 

@@ -13,3 +13,23 @@ with Separator => 첫 번쨰 값으로 나오는 인자를 결합되는 문자�
 긴 문자열을 취해서 작은 문자열로 반환하는 함수이다.
 ex) SubString('Hello',1,4) / 처음 인자는 문자열, 두 번째 인자는 시작할 번호, 세 번째 인자는 마지막 번호
 substr => substring의 축약형이다.
+
+4. 함수에서 그 결과값을 다른 함수로 전달하는 것이 가능하다.
+ex) select concat(substr(title,1,10),' ...') as Comfile from books;
+=> 안쪽의 함수부터 실행된다. 이 후 바같쪽 함수가 실행된다.
+
+ex) select concat(substr(author_fname,1,1),'.', substr(author_lname,1,1)) as inital from books;
+=> concat은 문자열을 결합하는 것이다. 인자가 몇개가 되든 상관없다. substr은 원하는 문자열만 가져오는 것이다.
+=> substr로 원하는 문자열을 결합하고 concat으로 합치는 로직이다.
+
+5. sql 포맷팅
+Select이 포함된 쿼리문을 선택하고 빗자루모양의 sql Script를 누르면 자동 포맷이 된다.
+
+
+
+
+
+
+
+
+
