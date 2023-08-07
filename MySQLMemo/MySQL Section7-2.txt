@@ -4,3 +4,60 @@ replace 함수는 3개의 인자를 받는다. replace(1,2,3)
 1 => 작업하게 될 문자열
 2 => 변경될 인자
 3 => 변경할 인자
+
+query문은 대소문자에 자유로운 편이지만 Replace 인자들은 대소문자를 착실히 구분한다./ 맞춰줘야 한다.
+
+2.Reverse
+문자열을 거꾸로 출력한다.
+예외 사항 null은 null을 출력한다, 공백은 공백을 출력한다.
+
+3.Char_Length
+문자열의 길이를 출력한다/ 공백도 하나의 문자열로 취급한다.
+비슷한 함수로 Length()가 있다. => length는 바이트의 길이를 출력한다. (알파벳은 1바이트, 한글은 2,3바이트..)
+
+4. Upper(Ucase)/ Lower(Lcase)
+모든 문자열을 대문자로 => upper/Ucase
+모든 문자열을 소문자로 => Lower/Lcase
+
+5. 기타 문자열 함수
+
+5-1. Insert
+더 큰 문자열에 일부 하위 문자열을 삽입할 수 있게 해준다/ 반드시 더 큰 문자열일 필요는 없고 특정 문자열에 다른 문자열을 삽입하는 것이다.
+Insert (1,2,3,4)
+1 => 문자열 대상
+2 => 어디에 삽입할 것인지
+3 => 얼마나 많은 글자를 변경해야 하는지
+4 => 바꿀 문자열
+
+5-2. Left/ Right
+Left/Right(1,2)
+1 => 문자열 대상
+2 => 왼쪽/오른쪽부터 가져올 문자열 개수
+
+5-3. Repeat
+특정 문자열을 취해서 인자의 숫자만큼 반복한 결과값을 반환한다.
+
+5-4. Trim
+선행과 후행에 있는 공백 문자를 제거할 수 있다.
+그러나 중간의 공백은 지우지 않는다.
+
+select trim('   bar    ') => bar 출력
+select trim(Leading 'x' from 'xxxbarxxx') => barxxx 출력(앞의 x를 지워라)
+select trim(Trailing 'xyz' from 'barxxyz') => barx 출력 (뒤의 xyz를 지워라)
+select trim(Both 'xxx' from 'xxxbarxxx') => barx 출력 (앞뒤 xxx 지워라)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
