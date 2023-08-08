@@ -7,7 +7,6 @@ Select Replace('Hello World','World','wWWWwprld');
 Select Replace('Cheeze Cake Carrot Cake',' ',' - ');
 
 -- 칼럼을 대상으로 Replace 구현하기
-Use book_shop;
 select * from books;
 Select Replace(title, ' ',' - ') from books;
 
@@ -37,6 +36,7 @@ select Concat('I LOVE ',upper(title) ,' !!!') from books;
 
 -- Insert
 select insert(title,1,2,'A') as iinset, upper(title) from books;
+-- title의 첫글자에서 두 번째 글자를 통틀어서 A로 바꾸겠다.
 
 -- Right/ Left
 Select right('Hello World',5);
