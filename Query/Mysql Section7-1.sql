@@ -45,7 +45,7 @@ select concat('h','e','l','l','o');
 select concat (author_fname,'!!!') from books;
 select concat(author_fname,' ',author_lname) as fullName from books;
 
-select concat_ws('-',author_fname, author_lname) as fullname from books;
+select concat_ws(' - ',author_fname, author_lname) as fullname from books;
 
 
 -- SubString

@@ -37,6 +37,7 @@ select Concat('I LOVE ',upper(title) ,' !!!') from books;
 -- Insert
 select insert(title,1,2,'A') as iinset, upper(title) from books;
 -- title의 첫글자에서 두 번째 글자를 통틀어서 A로 바꾸겠다.
+select insert(title,4,1,'good') as inss, title from books;
 
 -- Right/ Left
 Select right('Hello World',5);
@@ -46,6 +47,7 @@ select concat(left('Hello World',5),' ',right('Hello World',5));
 -- Repeat
 select Repeat('hahaha',3);
 select Repeat(10*3,4);
+select title,repeat('Hwt',3) from books;
 
 -- Trim
 select trim('  aasdasd  ');
