@@ -18,8 +18,11 @@ ex) select book_id, title, pages from books order by 3 desc;
 => order by에 칼럼명 대신 숫자를 넣어서 표기할 수 있다.
 => 숫지 = 칼럼의 순번 = pages / pages를 desc(내림차순)으로 정렬해라
 
-하나의 칼럼으로 정렬하고 또 다른 칼럼...으로 정렬하는 방법
+하나의 칼럼으로 정렬하고 또 다른 칼럼...으로 정렬하는 방법 
+ex) 만약에 이름으로 정렬했을 떄 홍원태라는 행이 2개가 존재하면 2개의 행의 정렬방식은 insert 순서를 따른다.
+     이를 또 다시 정렬해주는 것이다.
 MySQL Section8-1/ 38Line
 
 테이블의 칼럼에 속하지 않은 데이터를 정렬하는 방법
+=> 함수를 사용해서 자신만의 칼럼을 만들고 별칭을 줘서 oreder by 값으로 넘기는 방식을 뜻한다.
 MySQL Section8-1/ 44Line

@@ -12,7 +12,7 @@ limit 1,2
 ex) select author_fname, title, stock_quantity from books order by author_fname, title limit 0,10;
 => order by가 된 데이터에 대해 limit를 뽑아낸다. 
 
-Limit의 위치는 where 뒤나, order by 뒤에 나온다./ select 명령의 마지막에 위치된다.
+Limit의 위치는 where 뒤나, order by 뒤에 나온다.
 
 만약 인자가 하나라면 숫자에 해당하는 행의 개수를 불러온다.
 3 => 3개의 행 뽑아라 1,2,3
