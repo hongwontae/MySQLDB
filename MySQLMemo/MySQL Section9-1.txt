@@ -1,0 +1,7 @@
+1. Count()
+쿼리를 통해 조회되는 모든 열을 구해달라는 함수
+
+count(*) => 쿼리문의 모든 행의 개수를 구한다. null도 포함한다.
+count(칼럼 명) => 쿼리문의 모든 행의 개수를 구하지만 null은 포함하지 않는다.
+
+ex) select count(distinct author_fname)
