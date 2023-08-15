@@ -83,7 +83,44 @@ select concat(author_fname,' ', author_lname) as FullName from books group by Fu
 -- Group by로 Min, Max 표현하기
 select author_fname, min(released_year) from books group by  author_lname, author_fname;
 
+select author_fname, author_lname, count(*), max(released_year) as recently,min(released_year) as posted
+from books group by author_lname, author_fname;
 
+
+
+-- sum()
+select sum(pages) from books;
+select author_fname, sum(pages) from books group by author_fname, author_lname;
+
+select sum(author_fname) from books;
+
+
+
+-- avg()
+select avg(pages) from books;
+
+select author_lname, avg(pages) from books group by author_fname, author_lname;
+
+
+
+-- Group By Assignment
+select * from books;
+
+select sum(stock_quantity) as Book from books;
+
+select released_year, count(*), sum(stock_quantity) from books group by released_year;
+
+select author_fname, author_lname, avg(released_year) from books group by author_fname, author_lname;
+
+select released_year as year, count(*) as '# books', avg(pages) as 'avg pages' from books group by released_year 
+order by year;
+
+-- 서브쿼리를 쓰는 sql, order by 야매 방식
+select author_fname, author_lname from books where pages = (select max(pages) from books);
+select concat(author_fname,' ' , author_lname) as 'FullName Pages WInner' 
+from books where pages = (select max(pages) from books);
+select concat(author_fname,' ' , author_lname) as 'FullName Pages WInner' from books
+order by pages desc limit 0,1;
 
 
 
