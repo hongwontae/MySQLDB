@@ -44,6 +44,26 @@ delete from books where author_lname='Caaaa';
 
 -- 서브쿼리 -Min 및 Max 문제
 
+-- 페이지 수가 가장 많은 제목 추출하기1
+select title, pages from books order by pages desc limit 1;
+
+-- 페이지 수가 가장 많은 행 추출하기2
+select * from books where pages=(select Max(pages) from books);
+
+
+insert into books (title, pages) values('My Life in words', 634);
+
+-- 무조건 하나만 나온다. pages수가 634가 높은 것이 두 개라도
+select title, pages from books order by pages desc limit 1;
+
+-- 두 개가 출력된다. where pages=634이기에...
+select * from books where pages=(select Max(pages) from books);
+select * from books where pages=634; -- 위와 같은 결과가 나온다.
+
+-- 가장 먼저 출간된 책의 제목
+select * from books where released_year=(select Min(released_year) from books);
+
+
 
 
 
