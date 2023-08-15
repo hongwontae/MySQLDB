@@ -25,6 +25,8 @@ select * from product;
 select * from product_images;
 
 select * from product_review;
+drop table free_reply;
+select * from free_reply;
 
 
 

@@ -65,6 +65,25 @@ select * from books where released_year=(select Min(released_year) from books);
 
 
 
+-- 다중 열 group by
+use book_shop;
+-- 끝 이름이 Harris라는 사람이 두 명이 존재한다.
+select author_fname, author_lname from books order by author_lname;
+
+-- 이렇게 group by를 하면 사용자가 원하는 데이터 값이 아니다.
+-- 성은 다른데 이름이 같은 경우라 따로 있다고 계산해야 한다.
+select author_lname, count(*) from books group by author_lname;
+
+-- 이 두개가 같은 값을 도출한다.
+select author_fname, author_lname from books group by author_fname, author_lname;
+select concat(author_fname,' ', author_lname) as FullName from books group by FullName;
+
+
+
+-- Group by로 Min, Max 표현하기
+select author_fname, min(released_year) from books group by  author_lname, author_fname;
+
+
 
 
 

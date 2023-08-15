@@ -41,6 +41,12 @@ max => Banana
 
 
 
+4. 다중 열 group by
+ex) select author_fname, author_lname from books group by author_fname, author_lname;
+author_fname, authore_lname이 그룹화를 한다. => 근데 중복되는 데이터가 있다. => 그래서 그룹화를 해야 하는데 다른 열에서는 다른 값을 가지고 있다. => 중복이 되어 있지 않다고 판단하고 고유의 행을 만든다.
+
+
+
 
 
 
