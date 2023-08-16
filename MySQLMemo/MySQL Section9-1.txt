@@ -7,6 +7,7 @@ count(칼럼 명) => 쿼리문의 모든 행의 개수를 구하지만 null은 �
 ex) select count(distinct author_fname)
 author_fname에서 중복된 데이터를 제거한 후에 행의 개수를 세어 출력한다.
 
+
 2. Group By
 중복되는 데이터를 묶어서 하나의 행으로 묶는다.
 => 이렇게 묶으면 group by만의 유용한 쿼리문을 던질 수 있다.
@@ -46,7 +47,7 @@ ex) select author_fname, author_lname from books group by author_fname, author_l
 author_fname, authore_lname이 그룹화를 한다. => 근데 중복되는 데이터가 있다. => 그래서 그룹화를 해야 하는데 다른 열에서는 다른 값을 가지고 있다. => 중복이 되어 있지 않다고 판단하고 고유의 행을 만든다.
 
 ex) select author_fname, min(released_year) from books group by  author_lname, author_fname;
-위 로직을 따르는데 author_lname만 나오는 것이다.
+위 로직을 따르는데 author_fname만 나오는 것이다.
 
 
 

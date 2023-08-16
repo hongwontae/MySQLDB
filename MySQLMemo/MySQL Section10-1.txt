@@ -1,0 +1,21 @@
+1. Char, VarChar
+
+데이터 타입이 Char라면 고정된 문자열을 갖는다. => 고정된 메모리를 갖는다
+
+ex) Create Table friends (
+  name Char(5)
+)
+
+insert into friends (name) values ('a'), ('bc'),('abc'),('abcde')
+=> a ~ abcde 모든 행은 고정된 5라는 메모리 값을 갖는다.
+=> 내부 로직은 'a'를 저장했을 떄 백그라운드에서는 'a   '으로 저장하고 검색할 떄는 공백를 제거하여 나타낸다.
+
+
+데이터 타입이 Varchar라면 유동적인 문자열을 갖는다. => 동적인 메모리를 갖는다.
+But 데이터 낭비가 Char에 비해서 높을 수 있다.
+' ' => 1Byte/ 'ab' => 3Byte/ 'abcd' => 5Byte
+=> 이렇게 Char로 지정했을 떄보다 메모리를 더 갖는다.
+
+
+Char, VarChar는 데이터 타입으로 들어갈 때 (num)이 들어가는데 num에 비해 넘치는 문자열을 넣었을 때는 일반적으로
+삽입되지 않는다.

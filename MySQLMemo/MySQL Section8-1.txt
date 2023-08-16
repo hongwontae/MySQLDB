@@ -2,6 +2,7 @@
 중복 데이터를 제거하고 출력하는 키워드이다/ 이러한 키워드는 select과 열 이름 사이에 존재한다.
 ex) select distinct concat(author_fname,' ', author_lname) from books;
 concat으로 합친 데이터들의 열에서 중복되는 데이터를 뺴고 출력한다.
+=> distinct는 열을 표현하는 곳에서 쓰이는 키워드이다.
 
 ex) select distinct author_fname, author_lname from books;
 단순히 이렇게 적어도 위와 같은 효과를 낼 수 있다.
