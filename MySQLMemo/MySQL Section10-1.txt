@@ -62,15 +62,28 @@ Double/ 8Bytes/ ~15digit
 
 
 5. Date, Time, DateTime
+Date => 'YYYY-MM-DD'(format) => 날짜를 나타내는 데이터 타입
+Time => 'HH:MM:SS' => 하루의 시간을 나타내는 것이 아니라 시간의 양을 저장하는 데이터 타입이다.
+DateTime => YYYY-MM-DD HH:MM:SS' => 날짜와 시간을 같이 저장하는 데이터 타입
+
+=> INSERT 할 떄 데이터 format를 지켜서 넣어야 한다. 그렇지 않으면 오류를 발생시킨다.
 
 
+6. CurDate(), CurTime(), Now()
+CurDate() = Current_Date() => 현재 날자를 출력
+CurTime() = Currnet_Time() => 현재 시간을 출력
+Now() => Currnet_TimeStamp() => 현재 DateTime을 출력
 
 
+7. Date 관련 함수
+MySQL 111Line
+Day(), Week(), month()
+이 함수가 제대로 작동하려면 포맷 형식에 알맞어야 한다.
 
 
-
-
-
+8. Time 관련 함수
+Hour(), Minuate(), seconde()/ date(), time()
+이 함수가 제대로 작동하려면 포맷 형식에 알맞어야 한다.
 
 
 

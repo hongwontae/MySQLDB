@@ -76,8 +76,60 @@ insert into nums3 (x) values (1.222123222123222); -- 자릿수를 넘어가면 �
 
 
 -- Date, Time, DateTime
+CREATE TABLE people (
+	name VARCHAR(100),
+    birthdate DATE,
+    birthtime TIME,
+    birthdt DATETIME
+);
+
+select * from people;
+
+INSERT INTO people (name, birthdate, birthtime, birthdt)
+VALUES ('Elton', '2000-12-25', '11:00:00', '2000-12-25 11:00:00');
+
+INSERT INTO people (name, birthdate, birthtime, birthdt)
+VALUES ('Lulu', '1985-04-11', '9:45:10', '1985-04-11 9:45:10'); 
+ 
+INSERT INTO people (name, birthdate, birthtime, birthdt)
+VALUES ('Juan', '2020-08-15', '23:59:00', '2020-08-15 23:59:00');
+
+-- format 형식에 맞춰서 insert 해주면 된다.
 
 
+
+-- CurDate(), CurTime(), Now()
+select curTime(); -- 현재 시간이 출력된다.
+select curDate(); -- 현재 날짜가 출력된다.
+select now(); -- 현재 dateTime이 출력된다.
+
+insert into people (name, birthdate, birthtime, birthdt)
+values ('Hazel',CurDate(), CurTime(), now() ); -- 병원에서 현재 태어난 아이의 출생연도를 넣을 때 유용할 거 같다.
+
+
+
+-- Date 관련 함수
+select birthdate from people;
+
+select birthdate, Day(birthdate) from people; -- Day()
+
+select birthdate, Day(birthdate), dayofweek(birthdate) from people; -- dayOfweek() => 1일은 일, 7일은 토 
+
+select birthdate, Day(birthdate), dayofweek(birthdate), dayofyear(birthdate) from people;  -- dayofyear() => 일 계산
+
+select birthdate, monthname(birthdate) from people; -- monthName() => 월 이름`
+
+select birthdate, week(birthdate) from people; -- week() 현재 몇 번쨰 주인지 추출
+
+select birthdate, year(birthdate) from people; -- year() 년도 추출
+
+
+
+-- Time 관련 함수
+select * from people;
+
+select birthdt, Hour(birthdt), minute(birthdt), second(birthdt) from people; -- 시, 분, 초 출력하는 함수
+select birthdt, date(birthdt), time(birthdt) from people; -- dateTime에서 date/time으로 분리되어 결과 출력
 
 
 
