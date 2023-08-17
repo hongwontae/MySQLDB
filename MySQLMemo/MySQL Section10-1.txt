@@ -96,9 +96,3 @@ Hour(), Minuate(), seconde()/ date(), time()
 
 
 
-
-
-
-
-
-

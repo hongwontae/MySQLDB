@@ -1,0 +1,68 @@
+9. Date_Format()
+Date_Format(a,'%b')
+a => 해당 칼럼
+b => format형식
+
+ex) select birthdate, Date_format(birthdate, '%a %b %D') from people;
+%a => 영어 형식으로 3개의 요일 알파벳 출력 (Mon, Thu, Thu)
+%b => 영어 형식으로 3개의 월 알파벳 출력 (Dec, Apr, Aug)
+%D => 영어 형식으로 숫자로 일 표현+th붙음 (12th, 25th)
+
+ex) select birthdate, date_format(birthdt, '%H:%i') from people;
+birthdt => 시간을 나타내는 칼럼
+date_format에 첫 매개변수로 a에 시간 칼럼을 주면 b 포맷에 시간을 뽑아내는 키워드 사용가능
+%H => 24시간 기준으로 시간 표현
+%i => 60분 기준으로 분 표현
+
+ex) select birthdt, date_format(birthdt, 'Born on: %r') from people;
+%r => 12시간 기준으로 시간 표현 (13시 이렇게 표현이 안된다.)
+
+
+10. Date Math
+DateDiff(a,b)
+a => 날짜 데이터
+b => 날짜 데이터
+a-b => 일을 반환한다./ 시간은 무시한다.
+
+Date_Add(a, Interval b)
+a => 날짜 데이터
+b => Interval 숫자 표현식(day, year, second)
+a + Interval 숫자 => 표현식을 파악해서 해당하는 데이터 형식에 맞춰 더하기 계산을 하고 출력한다.
+
+Date_Sub(a, Interval b)
+a => 날짜 데이터
+b => Interval 숫자 표현식(day, year, second)
+a - Interval 숫자 => 표현식을 파악해서 해당하는 데이터 형식에 맞춰 빼기 계산을 하고 출력한다.
+
+TimeDiff(a,b)
+a => 시간 데이터
+b => 시간 데이터
+a-b => 시간을 반환한다./ 날짜는 무시한다.
+
+
+11. TimeStamp()/ TimeStamp => Keyword
+TimeStamp() => dateTime과 유사하다. 단지 DateTime은 데이터 타입이고 TimeStamp는 데이터 타입이자 함수이다.
+또한 TimeStamp는 DateTime보다 효율적으로 메모리를 차지한다.
+
+
+12. TimeStamp Default On Update TimeStamps 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

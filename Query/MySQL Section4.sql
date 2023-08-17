@@ -32,6 +32,16 @@ Create table people (
 
 desc people;
 
+insert into people (first_name, last_name, age)
+values ('Bob','Belcher',43);
+
+insert into people (first_name, last_name, age)
+values ('Linda','Belcher',43),('Phillip','Frond',38),('Calvin','Fischeder',70);
+
+select * from people;
+
+drop table people;
+
 
 
 
