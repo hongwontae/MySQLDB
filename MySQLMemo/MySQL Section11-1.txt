@@ -1,1 +1,45 @@
-MySQL Section11-1
+1. Not Equal
+!= : 같지 않다. 조건문에 사용된다. where, having
+
+
+2. Not Like
+Not Like => like 키워드에 사용된다. 
+=> 검색조건에 옳지 않은 것만 뽑아낸다.
+
+
+3. GreatThan, Less Than or Equal To
+<= >= : 같거나 크다, 같거나 작다
+
+
+4. And
+조건문에 사용되는 키워드이다.
+조건을 하나만 사용할 수 있는 것이 아니라 And 조건으로 계속해서 붙인다.
+and => 조건이 모두 true여야 sql문이 실행된다.
+
+
+5. OR
+조건문에 사용되는 키워드이다.
+or 키워드를 통해 조건을 계속해서 붙일 수 있다.
+OR => 조건이 하나라도 참이면 sql문을 실행한다.
+1>4 or 4>1 => 참
+
+
+6. Between
+ex) Select pages from books Where pages between 100 and 200
+100~200 사이의 pages를 보여준다(100, 200 포함) 
+
+ex) Select pages from books Where pages Not between 100 and 200
+100~200 사이의 pages를 제외하고 보여준다. (100, 200 제외)
+
+=> Between은 항상 And와 함께 사용된다.
+
+
+
+
+
+
+
+
+
+
+
