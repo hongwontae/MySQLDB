@@ -61,6 +61,7 @@ insert into product (price) values (5.2); -- 5,2의 범위 안에 존재
 insert into product (price) values (500.23); -- 5,2 범위 안에 존재
 insert into product (price) values (5000.2); -- 불가능 2개는 소수점 유효 범위/ 5,2면 일반 정수가 4자리면 안된다.
 insert into product (price) values (3.057); -- 에러가 발생하지만 삽입된다. 3.06이 출력된다. => 2자리 수까지 반올림된다.
+-- 소수점자리는 넘쳐도 되지만 적으면 안된다.
 
 
 
@@ -130,6 +131,7 @@ select * from people;
 
 select birthdt, Hour(birthdt), minute(birthdt), second(birthdt) from people; -- 시, 분, 초 출력하는 함수
 select birthdt, date(birthdt), time(birthdt) from people; -- dateTime에서 date/time으로 분리되어 결과 출력
+-- 그럼으로 date,time은 데이터 타입이 될 수 있고 함수도 될 수 있다.
 
 
 

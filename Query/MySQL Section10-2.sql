@@ -3,7 +3,7 @@
 -- Date_Format()
 use mysqlud;
 
-select birthdate ,date_format(birthdate, '%a %b	 %D')from people;
+select birthdate ,date_format(birthdate, '%a  %b %D')from people;
 select birthdate, date_format(birthdt, '%H:%i') from people;
 select birthdt, date_format(birthdt, 'Born on: %r') from people;
 
