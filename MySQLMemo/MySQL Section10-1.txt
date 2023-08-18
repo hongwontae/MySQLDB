@@ -82,8 +82,9 @@ Day(), Week(), month()
 
 
 8. Time 관련 함수
-Hour(), Minuate(), seconde()/ date(), time()
+Hour(), Minuate(), seconde()/ date(), time() 
 이 함수가 제대로 작동하려면 포맷 형식에 알맞어야 한다.
+date(), time() => 이것도 동일하게 데이터타입이면서 함수이다.
 
 
 

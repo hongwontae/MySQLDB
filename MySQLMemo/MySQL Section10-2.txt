@@ -2,6 +2,7 @@
 Date_Format(a,'%b')
 a => 해당 칼럼
 b => format형식
+=> Date를 원하는 방식으로 뽑아낼 수 있다.
 
 ex) select birthdate, Date_format(birthdate, '%a %b %D') from people;
 %a => 영어 형식으로 3개의 요일 알파벳 출력 (Mon, Thu, Thu)

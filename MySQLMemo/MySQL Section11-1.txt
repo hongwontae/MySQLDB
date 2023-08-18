@@ -34,6 +34,17 @@ ex) Select pages from books Where pages Not between 100 and 200
 => Between은 항상 And와 함께 사용된다.
 
 
+7. Date 비교
+Date를 비교할 때 문자열로 적어도 인식하여 sql문을 실행한다. => 이렇게 할 때는 문자열이 날짜 형식을 잘 맞춰줘야 한다.
+더욱 좋은 비교법은 칼럼의 데이터 값을 날짜 함수로 사용해서 날짜 데이터로 불러오고 비교 연산을 실행하는 것이다.
+
+Cast(a,as b)
+a => 변환하고 싶은 값
+b => 변환하고 싶은 데이터 타입
+ex) select birthdate from people where birthdate > cast('2000-08-08' as date); 
+=> cast a는 날짜 포맷 형식에 맞춘 문자열, as 데이터 타입 
+=> 함수결과는 사용자가 지정한 날짜 데이터 타입이 나와서 출력되거나 비교된다.
+
 
 
 
