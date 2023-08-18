@@ -30,6 +30,8 @@ from books order by released_year asc;
 Null 값이 있는 데이터를 조회하고 싶다면 'null', null로 조회하면 출력되지 않는다.
 Null 값에 대해서 CRUD를 하고 싶다면 Is Null 키워드를 사용해야 한다.
 is Not Null => Null이 아닌 데이터
+where 조건에도 사용 가능 ex) select * from books where author_lname is not null
+=> 작가의 성이 널이 아닌 전체 행을 가져와라
 
 
 
