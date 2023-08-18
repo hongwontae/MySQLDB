@@ -1,0 +1,43 @@
+8. In Operator
+In 연산자는 OR의 키워드와 = 수식을 합친 것이다.
+Not In 연산자는 In 조건을 제외한 나머지를 불러온다.
+% => 자바와 같은 나머지 연산자이다.
+
+MySQL TIP
+띄어져 있는 창을 임의적으로 치우려면 왼쪽 상단의 그림 아이콘을 선택하면 된다.
+
+
+9. Case 구문
+Case구문은 칼럼을 만들어낸다고 보면 된다. 다만 칼럼에 조건을 유용하게 줄 수 있어서 유용한 것 뿐이다.
+
+ex) 
+select title, released_year, -- ,붙여 준다. 하나의 칼럼이기 때문에
+  Case
+	When released_year >= 2000 Then 'Modern Lit'
+	Else '20TH Century Lit'
+    END AS Genre
+from books order by released_year asc;
+=> Case (하나의 칼럼이며, Case문의 시작)
+=> When (Where과 같다.)
+=> Then (true일 때 출력되는 데이터)
+=> Else (false일 때 출력되는 데이터)
+=> End AS (별칭)
+=> When은 사용자가 원하는 만큼 생성할 수 있으며 각 when의 끝에는 ,(쉼표)를 붙이지 않는다. 조건이기 때문에
+=> Case는 칼럼이기 때문에 Order By의 대상이 될 수 있다.
+
+
+10. is Null/ is Not Null 
+Null 값이 있는 데이터를 조회하고 싶다면 'null', null로 조회하면 출력되지 않는다.
+Null 값에 대해서 CRUD를 하고 싶다면 Is Null 키워드를 사용해야 한다.
+is Not Null => Null이 아닌 데이터
+
+
+
+
+
+
+
+
+
+
+
