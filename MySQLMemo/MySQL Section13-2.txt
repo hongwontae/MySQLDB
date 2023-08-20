@@ -1,1 +1,10 @@
-MySQL Section13-2
+5. Inner Join
+Pk와 Fk가 맞는 부분만 Join하여 출력한다.
+
+ex) select first_name, last_name, order_date, amount from customers
+join orders on orders.customer_id = customers.id;
+=> select 원하는 칼럼 나열 from 왼쪽 Join 테이블 Join 오른쪽 Join 테이블 on Left테이블명.pk(fk) = Right테이블 명.fk(px) => Pk와 FK가 맞는 부분만 출력된다./ 이 때 on 조건에 Left, Right의 순서는 상관없다. 다만 from의 테이블이 왼쪽에 나오고 Join 테이블이 오른쪽에 나온다.  
+
+ex) select * from orders 
+inner join customers on customers.id = orders.customer_id;
+=> 기본적으로 Join은 Inner join이다. Ineer Join일 때는 Inner을 생략해도 된다.
