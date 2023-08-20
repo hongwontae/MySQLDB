@@ -68,6 +68,14 @@ left join customers on customers.id = orders.customer_id; -- Inner Join과 같�
 
 
 
+-- Left Join And Group By
+Select first_name, IFNull(sum(amount),0) from customers
+left join orders on customers.id = orders.customer_id
+group by first_name;
+
+
+
+
 
 
 
