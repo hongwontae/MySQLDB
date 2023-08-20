@@ -37,7 +37,7 @@ Create table nums (
 );
 
 insert into nums (age) values (200);
-insert into nums (age) values (-1); -- 불가능 => unsignde
+insert into nums (age) values (-1); -- 불가능 => unsigned 제약조건
 
 Create table nums2(
 	age int
@@ -118,7 +118,7 @@ select birthdate, Day(birthdate), dayofweek(birthdate) from people; -- dayOfweek
 
 select birthdate, Day(birthdate), dayofweek(birthdate), dayofyear(birthdate) from people;  -- dayofyear() => 일 계산
 
-select birthdate, monthname(birthdate) from people; -- monthName() => 월 이름`
+select birthdate, monthname(birthdate) from people; -- monthName() => 월 이름
 
 select birthdate, week(birthdate) from people; -- week() 현재 몇 번쨰 주인지 추출
 

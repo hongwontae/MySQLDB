@@ -47,7 +47,7 @@ TimeStamp() => dateTime과 유사하다. 단지 DateTime은 데이터 타입이�
 => 범위가 좁기 때문이다. ex) 1960년을 표현할 수 없다
 
 
-12. TimeStamp Default On Update TimeStamps 
+12. TimeStamp Default/ On Update
 
 제약조건이다.
 

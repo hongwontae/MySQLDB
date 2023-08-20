@@ -77,14 +77,17 @@ Now() => Currnet_TimeStamp() => 현재 DateTime을 출력
 
 7. Date 관련 함수
 MySQL 111Line
-Day(), Week(), month()
+month(), Week(), Day()
 이 함수가 제대로 작동하려면 포맷 형식에 알맞어야 한다.
 
 
 8. Time 관련 함수
-Hour(), Minuate(), seconde()/ date(), time() 
+Hour(), Minuate(), seconde()
 이 함수가 제대로 작동하려면 포맷 형식에 알맞어야 한다.
+
+date(), time() => date 출력 함수, time 출력 
 date(), time() => 이것도 동일하게 데이터타입이면서 함수이다.
+
 
 
 

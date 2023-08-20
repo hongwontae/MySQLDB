@@ -12,6 +12,8 @@ select * from people where hour(birthdt) < 14; -- 이렇게 변환하면 숫자�
 
 select name, cast('16:00:00' as time) from people; -- cast 함수 사용
 
+-- Select name, cast (16:00:00, as time) from people; => cast함수가 실행되지 않음, Cast함수는 첫 번째 매개변수로 문자열만 가능하다.
+
 select birthdate from people where birthdate > cast('2000-08-08' as date); -- where 조건에 cast사용
 
 
@@ -53,6 +55,18 @@ SELECT
 FROM
     books order by stock asc
 ;
+
+-- Case 연습
+Select pages, count(*),
+Case 
+	when pages<=50 then '페이지 수 적음'
+    when pages<=100 then '페이지 수 다소 적음'
+    when pages<=150 then '페이지 수 중간'
+    when pages<=200 then '페이지 수 중상'
+    when pages<=250 then '페이지 수 상'
+    else '페이지 수 다수'
+    end as Star
+    from books group by Star, pages order by pages desc;
 
 
 

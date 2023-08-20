@@ -16,7 +16,7 @@ insert into contacts (name, phone) values ('HONG','010-3695-5528'); -- 정상 in
 
 
 -- 2. Check 제약조건
-CReate table users1(
+Create table users1(
 	name1 varchar(20),
     age int check(age>0)
 );
@@ -77,6 +77,24 @@ Create table houses(
 insert into houses (purchase_price,sale_price) values (200,100); -- 제약 조건 오류 제약조건을 sale_price를 높게 주었기 때문
 insert into houses (purchase_price,sale_price) values (1000,10000); -- 제약 조건에 위배되지 않음
 select * from houses;
+
+
+-- 제약 조건 연습
+Create table korea(
+	name varchar(20) not null default 'HWT',
+    age int not null default 19,
+    constraint nameCheck check (char_length(name)>3),
+    Constraint ageCheck check (age<40)
+);
+
+INSERT INTO Korea (name, age) values ('Sarabia',20);
+select * from korea;
+insert into korea (name, age) values ('as',30); -- nameCheck 제약조건 오류
+
+insert into korea (name, age) values ('korea',50); -- ageCheck 제약조건 오류
+insert into korea (name, age) values ('korea', 30);
+select * from korea;
+
 
 
 

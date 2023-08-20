@@ -29,7 +29,8 @@ ex) Alter table company modify company_name varchar(100) default '알지 못함'
 
 
 9. Alter Constraint
-
+1. 제약조건 추가 => Alter table 테이블 이름 Add Constraint 새로운 제약조건 이름 제약조건
+2. 제약조건 삭제 => Alter table 테이블 이름 drop Constraint 기존 제약조건 이름
 
 
 

@@ -4,7 +4,7 @@ use book_shop;
 
 -- Not Equal
 select * from books where author_lname != 'Gaiman';
-select released_year from books where released_year != 2017;
+select released_year from books where released_year != 2017 order by released_year desc; -- 2017 출력되지 않음
 
 
 
@@ -42,8 +42,8 @@ select author_lname as 'al', author_fname as 'af' from books where author_lname 
 
 
 -- Between
-select pages from books where pages between 200 and 300;
-select pages from books where pages not between 200 and 300;
+select pages from books where pages between 200 and 300; -- 200, 300 포함
+select pages from books where pages not between 200 and 300; -- 200, 300 미포함
 
 select released_year from books where released_year between 2004 and 2017 order by released_year desc; 
 select released_year from books where released_year not between 2004 and 2017 order by released_year desc; 
