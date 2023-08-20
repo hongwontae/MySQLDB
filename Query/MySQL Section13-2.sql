@@ -59,6 +59,14 @@ order by total desc; -- 조인과 Group, Order
 
 
 
+-- Left Join
+select first_name, last_name, order_date, amount from customers
+left join orders on customers.id = orders.customer_id; -- Left Join이라서 왼쪽의 customers의 데이터는 모두 출력되고 오른쪽 테이블은 일치하는 것은 매칭하고 일치하지 않는 것은 null을 준다.
+
+select first_name, last_name, order_date, amount from orders
+left join customers on customers.id = orders.customer_id; -- Inner Join과 같은 결과가 출력된다.
+
+
 
 
 
