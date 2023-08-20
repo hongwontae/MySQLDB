@@ -32,3 +32,37 @@ VALUES ('2016-02-10', 99.99, 1),
        ('2014-12-12', 800.67, 2),
        ('2015-01-03', 12.50, 2),
        ('1999-04-11', 450.25, 5);
+
+select * from customers;
+select * from orders;
+
+
+
+-- Cross join
+-- 만약 Boy George의 주문 내역을 보고 싶다면?
+select id from customers where last_name='George';
+select * from orders where customer_id=1; -- 조금 투박한 방식이다. 이렇게 하면 쿼리를 두 번 날린다.
+
+select * from orders where customer_id=(select id from customers where last_name='George');
+-- 이 방식은 한 번만 날리지만 customer table과 order table의 데이터를 한 번에 볼 수 없다는 단점이 여전히 존재한다.
+
+select * from customers, orders; -- 이 방식이 Cross Join이다.
+select count(*) from customers, orders;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
