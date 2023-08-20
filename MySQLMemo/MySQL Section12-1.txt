@@ -1,0 +1,43 @@
+1. Unique 제약조건
+칼럼의 데이터가 유일해야 한다. => 중복을 허용하지 않는다.
+
+
+2. Check 제약조건
+insert되는 데이터에 대해 조건을 걸어서 조건이 충족되는 데이터만 insert를 허용하는 제약조건이다.
+filter를 떠올리면 된다.
+
+
+3. 제약 조건 명명
+제약 조건에 이름을 줄 수 있다.
+ex) Create table user2 (
+	username varchar(20) not null,
+    age int, constraint age_not_negative check (age>=0)
+);
+
+=> 이름이 없이 제약 조건을 줄 때는 ,(쉼표)없이 바로 붙이면 되지만 제약조건에 이름을 줄 때는 ,(쉼표)를 사용하고 Constranint (제약조건이름) 제약조건 형식으로 줘야 된다.
+=> 이렇게 하는 이유는 제약조건이 위배되었을 때 사용자가 쉽게 식별할 수 있도록 하기 위해서다.
+=> 제약 조건 명명은 Check, Forigin, pk, unique만 가능하다.
+
+
+4. 다중 열 조건
+ex) Create table company(
+ name varchar(10) not null,
+ address varchar(30) not null,
+ constraint name_addr unique (name, address)
+);
+
+insert into company (name, address) values ('홍원태','녹양동');
+insert into company (name, address) values ('가능동','녹양동');
+insert into company (name, address) values ('홍원태','신설동');
+insert into company (name, address) values ('홍원태','신설동'); => 이거는 불가능하다. 위의 제약조건의 해석은 한 행의 데이터 값은 유일해야 한다는 뜻이다. 그럼으로 이름만 같고 주소는 다르거나 주소는 같고 이름은 다른 것은 가능하지만 이름과 주소가 모두 일치하는 두 개의 행은 제약조건에 위배된다는 뜻이다
+
+=> 맨 밑에 작성이 가능하고, Constraint (제약 조건 이름) 제약 조건
+=> 서로의 칼럼들이 연관되는 제약조건을 만들 수 있다.
+
+
+
+
+
+
+
+
