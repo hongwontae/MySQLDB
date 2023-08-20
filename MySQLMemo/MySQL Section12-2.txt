@@ -1,0 +1,53 @@
+5. Alter Table ADD Column
+존재하는 테이블에 새로운 칼럼을 추가하는 방법 => Alter Table 테이블 명 ADD Column 칼럼이름 데이터 타입 제약조건
+ADD Column할 때 Column은 제외해도 명령이 작동한다.
+
+Alter table add column을 실행했을 때 기본값으로 null이 들어간다.
+이러한 기본값을 Default 키워드로 설정해줄 수 있다.
+
+
+6. Alter Table Drop Column
+존재하는 테이블에 칼럼을 제거하는 방법 => Alter Table Drop column 칼럼명
+=> 칼럼을 지워버린다. = 칼럼의 데이터를 모두 삭제한다.
+=> Drop Column을 할 때 Column을 제외해도 명령이 작동한다.
+
+
+7. 테이블 이름과 칼럼 이름 바꾸기
+테이블 이름 바꾸는 명령은 2가지가 존재한다.
+=> Rename table 기존 테이블 이름 to 새로운 테이블 이름
+=> Alter table 기존 테이블 이름 Rename to 새로운 테이블 이름
+
+칼럼 이름을 바꾸는 명령
+=> Alter table 테이블 이름 Rename Column 기존 칼럼 명 to 새로운 칼럼명
+=> 이 명령에는 Rename Column에서 Column은 필수적으로 들어가야 한다.
+
+
+
+8. Column Modify
+Alter table 테이블 이름 Modify 칼럼 이름 데이터 타입 제약조건 (default)
+ex) Alter table company modify company_name varchar(100) default '알지 못함';
+
+
+9. Alter Constraint
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -75,7 +75,7 @@ Create table houses(
 );
 
 insert into houses (purchase_price,sale_price) values (200,100); -- 제약 조건 오류 제약조건을 sale_price를 높게 주었기 때문
-insert into houses (purchase_price,sale_price) values (1000,10000); -- 제약 조건에 위배되지 않음 
+insert into houses (purchase_price,sale_price) values (1000,10000); -- 제약 조건에 위배되지 않음
 select * from houses;
 
 
