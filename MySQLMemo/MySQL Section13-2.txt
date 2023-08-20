@@ -52,6 +52,18 @@ group by first_name, last_name;
 Left Join과 같은 로직이다. 다만 Right에서 모든 행을 가져오고 Left는 일치하는 것만 가져온다.
 
 
+8. Cascade
+OneToMany 관계에서 부모의 데이터가 지워지면 자식의 데이터도 지우는 명령
+=>  FOREIGN KEY (외래키 이름) REFERENCES 부모 테이블 이름(부모 PK) on delete cascade
+
+기본적으로 부모 테이블의 데이터를 지우려면 상관관계에 있는 자식의 데이터를 먼저 지워야 한다.
+그러나 On Delete Cascade 제약조건을 주면 부모의 데이터가 사라지면 자식의 데이터도 삭제되게 한다.
+ex) 페이스북 페이지가 삭제되면 댓글도 삭제된다.
+
+delete from customers where last_name='George';
+
+
+
 
 
 
