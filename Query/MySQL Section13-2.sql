@@ -124,6 +124,9 @@ VALUES ('2016-02-10', 99.99, 1),
 select * from customers;
 select * from orders;
 
+delete from customers where last_name='George';
+
+
 
 
 
