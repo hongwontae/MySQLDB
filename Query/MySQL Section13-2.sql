@@ -75,6 +75,9 @@ group by first_name;
 
 
 
+-- Right Join
+
+
 
 
 

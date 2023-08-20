@@ -46,8 +46,10 @@ ex) Select first_name, last_name, IFNull(sum(amount),0) from customers
 left join orders on customers.id = orders.customer_id
 group by first_name, last_name;
 => IFNull을 사용하지 않았으면 비워있는 오른쪽 값에 Null이 존재할 것이다. 그러나 IFNull을 통해 치환되는 값을 0으로 주었기 때문에 0이 나온다.
- 
 
+
+8. Right Join
+Left Join과 같은 로직이다. 다만 Right에서 모든 행을 가져오고 Left는 일치하는 것만 가져온다.
 
 
 
