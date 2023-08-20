@@ -51,3 +51,4 @@ ex) Alter table company modify company_name varchar(100) default '알지 못함'
 
 
 
+

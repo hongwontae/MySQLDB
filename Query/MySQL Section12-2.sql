@@ -47,9 +47,13 @@ desc company;
 
 -- Alter Constraint
 desc houses;
-Alter table houses add constraint positive_pprice check (purchase_price>=0);
+Alter table houses add constraint positive_pprice check (purchase_price>=0); -- 제약 조건 추가
 Select * from houses;
 insert into houses (purchase_price, sale_price) values (-1,4); -- 제약조건 위배
+
+Alter table houses drop constraint positive_pprice; -- 제약 조건 삭제
+insert into houses (purchase_price, sale_price) values (-1,4); -- 제약 조건 삭제로 인해 insert 가능
+select * from houses;
 
 
 
