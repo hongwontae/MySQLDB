@@ -1,0 +1,9 @@
+1. Null Insert
+Insert into table 이름 () values ();
+=> 모든 행에 null값이 들어간다. defalut값이 있을 때는 default값만
+
+Insert into table 이름 (칼럼 명) values (칼럼 명);
+=> 모든 행에 null값이 들어간다. defalut값이 있을 때는 default값만/ 위와 같은 결과
+
+default값에 널 넣는 방식
+Insert into table이름 (칼럼 명) values (null);

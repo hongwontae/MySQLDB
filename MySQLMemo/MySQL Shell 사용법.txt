@@ -1,0 +1,11 @@
+MySQL Shell 사용법
+
+1. 접속방법
+\connect --mysql root@localhost:3306
+
+2. password : admin
+
+3. 기본적으로 js기능으로 되어 있다. sql로 바꾸고 싶다면
+\sql
+
+4. 일반적인 workbench처럼 사용하면 된다.

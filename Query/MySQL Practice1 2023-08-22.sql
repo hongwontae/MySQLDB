@@ -1,4 +1,4 @@
--- MySQL Pratice 2023-08-22
+-- MySQL Pratice1
 
 -- Section 3, 4-1, 4-2
 show databases;
