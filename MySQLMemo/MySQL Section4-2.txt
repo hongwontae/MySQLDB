@@ -30,6 +30,14 @@ ex) Create Table cat33 (
   age int Not Null Default 15	
 ) => 기본값만 걸어준 것
 
+ex) insert into books (nickname, price, released_year) values (nickname, price,'1998-02-23');
+=> Default 값을 넣는 방법이다. Value에 default을 넣을 칼럼명을 적어주면 된다.
+
+ex)  insert into book2 (nickname) values (null);
+=> 이러한 방식으로 Null을 넣을 수 있다.
+
+
+
 
 4. 기본키 pk
 => 각 데이터들의 고유의 식별자는 항상 필요하다.
