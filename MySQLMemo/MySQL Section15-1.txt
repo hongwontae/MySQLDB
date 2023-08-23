@@ -1,0 +1,49 @@
+1. View
+쿼리를 저장하는 가상 테이블 역할을 한다.
+
+Create VIEW 뷰 이름 as sql쿼리;
+=> 이렇게 뷰를 생성하면 show tables했을 때 해당 뷰가 존재한다.
+
+select * from 뷰 이름; => 일반적인 쿼리문이 정상적으로 작동한다.
+
+ex) select title, round(avg(rating),2) from reviews_Join group by title
+=> Join을 사용해서 쿼리문을 작성하면 매우 길어질 텐데 뷰를 사용함으로써 간단히 구현가능
+
+
+2. Update View
+일반적으로 뷰는 삭제나 Update가 불가능하다. (조인, 서브쿼리, 집계함수 들어간 쿼리 etc..)
+그러나 정석적인 일부 sql 뷰는 update, delete가 가능하다. 
+뷰를 Update, Delete하면 기존의 테이블에 영향을 준다.
+
+
+3. View 대체/ 변경하기
+Create or Replace VIEW 뷰 이름 as 쿼리문
+=> 뷰가 없으면 생성하고 뷰가 있으면 as 쿼리문으로 업데이트 해라.
+
+Alter view 뷰 이름 as 쿼리문 
+=> 해당 뷰를 변경하는 쿼리문. 이건 쿼리문이 없으면 실행하지 않는다.
+
+drop view 뷰 이름
+=> 뷰를 삭제하는 쿼리문
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
