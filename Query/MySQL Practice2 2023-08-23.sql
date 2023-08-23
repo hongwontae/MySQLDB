@@ -136,6 +136,39 @@ select * from com;
 insert into com (nickname) values ('hwt');
 update com set nickname = 'crazy lazy' where nickname is null;
 
+select * from books where book_id != 1;
+
+select * from books where title not like 'T%';
+
+select * from books where pages<200 and title like '%s';
+
+select * from books where pages<200 or title like '%s';
+
+select * from books where pages between 300 and 500; -- 300, 500 포함
+
+select * from books where pages not between 300 and 500; -- 300 500 미포함
+
+select cast('2023-03-03' as date);
+
+select * from books where book_id in (1,2,3);
+
+select * from books where book_id not in (1,2,3);
+
+select book_id, title, stock_quantity, case
+	when stock_quantity < 100 then '*'
+	when stock_quantity < 200 then '**'
+	when stock_quantity < 300 then '***'
+	when stock_quantity < 400 then '****'
+	when stock_quantity < 500 then '*****'
+	else '넘침 재고'
+    end as '재고량'
+ from books order by 재고량 desc;
+ 
+ select title from books where pages is null;
+
+
+
+
 
 
 
