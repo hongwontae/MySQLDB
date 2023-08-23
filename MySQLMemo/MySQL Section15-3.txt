@@ -1,0 +1,49 @@
+6. SQL 모드 기초
+MySQL 동작과 유효성 검사를 바꾸기 위해 켜고 끌 수 있는 설정이다.
+SQL모드에는 두 가지 범위가 존재한다.
+전역적으로 활성화되어 있는 글로벌 모드/ 현재 세션에서 활성화되어 있는 세션 모드
+
+select @@Global .sql_mode;
+=> 전역 sql 모드
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION 
+
+select @@Session .sql_mode;
+=> 현재 세션 모드
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_EN
+GINE_SUBSTITUTION
+
+SQL 모드를 설정하는 방법
+Set global sql_mode = '모드 이름' => 글로벌 모드 설정하는 방법
+Set Session sql_mode = '모드 이름' => 현재 세션 모드 설정하는 방법
+
+현재 세션 모드를 변경하면 세션을 멈추거나 MySQL Shell를 재시작하면 모든 변경사항이 사라진다.
+글로벌 모드는 모드를 변경하면 영구적이고 사용자에게 전역적인 영향을 미친다.
+
+-- Show Warings -- => sql문을 실행했을 때 오류가 아닌 경고가 있다. 경고의 내용을 보여주는 명령어
+
+ERROR_FOR_DIVISION_BY_ZERO => 0으로 숫자를 나누었을 때 뜨는 경고 설정
+이 모드를 삭제하고 select 3/0를 실행하면 Null이 출력된다.
+
+Strict_Trans_Tables => Insert, Update을 실행할 때 유효하지 않거나 누락된 값을 처리하는 방식을 제어하는 설정
+만약 Strict_Trans_Tables을 제거하고 decimal 데이터 타입인 Rating에 문자열을 넣으면 경고를 띄우고 삽입이 된다. 값은 0.0
+=> 데이터 타입 유효성 검사
+
+
+7. 다른 sql 모드
+Only Full Group By => Group By를 한 칼럼만 select의 대상이 되도록 한다.
+No_Zero_In_Date => 날짜에 대해 유효성 검사를 한다. 2020-00-00/ 2013-97-22 => 경고를 뱉어낸다.
+(Strict_trans_Tables를 걸면 No_Zero_In_Date의 경고를 오류로 바꿔서 에러를 뱉어 sql문 실행을 불가능하게 한다.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
