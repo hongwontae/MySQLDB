@@ -18,6 +18,8 @@ ex) Create table user2 (
 => 이렇게 하는 이유는 제약조건이 위배되었을 때 사용자가 쉽게 식별할 수 있도록 하기 위해서다.
 => 제약 조건 명명은 Check, Forigin, pk, unique만 가능하다.
 
+=> 제약조건 명명은 check가 아니더라도 ()에 칼럼명을 작성해야 한다.
+
 
 4. 다중 열 조건
 ex) Create table company(
