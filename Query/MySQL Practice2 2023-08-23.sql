@@ -80,6 +80,61 @@ select * from dataType3;
 
 insert into dataType (price1) values (72222.22);
 
+use book_shop;
+show tables;
+select * from books;
+insert into books (title) values ('Is that cool'); -- 이건 허용된다. 나머지 행들은 널 값이 들어간다.
+select * from books order by pages asc;
+desc books;
+desc dataType3;
+insert into dataType3 (price1) values (3000);
+insert into dataType3 (price2) values (3.7778);
+insert into dataType3 (price3) values (3.777812);
+insert into dataType3 (date1) values ('2023-07-29');
+insert into dataType3 (time1) values ('13:30:30');
+insert into dataType3 (datetime1) values ('2023-07-29 13:30:30');
+
+
+insert into dataType3
+select * from datatype3;
+insert into dataType3 values (12345.67, 45.34, 123.123123, '2023-07-30','13:59:34','2023-07-30 13:34:30'); -- 칼럼의 순서, 데이터 수 제대로 맞춰야 함
+
+insert into dataType3 (date1) values (curdate()); -- 8월 23일
+insert into datatype3 (time1) values (curtime()); -- 10시 51분 15초
+insert into datatype3 (time1) values (now());
+
+select year(now());
+select day(now());
+select dayofweek(curdate()); -- 한 달에서 몇 주째냐?
+select week(curdate()); -- 몇 주쨰냐?
+select month(now());
+select monthname(now());
+
+select hour(curtime());
+select minute(curTime());
+select second(curtime());
+
+select date_format(now(),'%D');
+select datediff(now(),'2023-08-08');
+select timediff(curtime(),'09:30:30');
+
+select date_add(now(), interval 1 year);
+select date_add(now(), interval 1 day);
+select date_add(now(), interval 20 week);
+select date_add(now(), interval 8 month);
+
+select date_sub(now(), interval 3 month);
+
+create table com(
+	nickname varchar(15),
+    workDate timestamp default current_timestamp,
+    workFinishDate timeStamp on update current_timestamp
+);
+
+insert into com () values ();
+select * from com;
+insert into com (nickname) values ('hwt');
+update com set nickname = 'crazy lazy' where nickname is null;
 
 
 
