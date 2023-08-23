@@ -60,6 +60,63 @@ alter table goods5 add constraint check(age>=10);
 insert into goods5  values ('asd','asd',7); -- 제약 조건 오류발생
 
 
+use mysqlud;
+select * from customers;
+select * from orders;
+
+select * from customers, orders; -- cross join
+
+select * from customers
+inner join orders on customers.id = orders.customer_id; -- Inner join 주문한 사람의 정보
+
+select first_name, last_name, ifnull(order_date, now()), ifnull(amount, 0) from customers
+left join orders on customers.id = orders.customer_id;
+
+-- cascade foriegn key (customer_id) references orders (orders_id) on delete cascade => cascade 제약조건 부모 데이터 삭제돠면 자식 데이터도 삭제된다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
