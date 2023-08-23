@@ -1,0 +1,47 @@
+1. Round(a,b)
+반올림해주는 함수이다.
+
+a => 숫자
+b => 반올림 자릿수
+ex) select round(4.9893,2);
+=> 4.99
+
+
+2. sql문도 if문이 존재한다. 
+IF문은 SELECT의 뒤에 위치할 수 있다.
+
+
+3. Join 테이블 두 개
+테이블 2개를 대상으로 join을 걸 수 있다.
+
+ex) 
+inner join series on reviews.series_id = series.id
+inner join reviewers on reviews.reviewer_id = reviewers.id
+=> 그냥 한 번 더 작성하는 것이다.
+
+조인을 두 개를 하는 것은 테이블의 순서가 중요하지 않다. 연관만 지어서 가지고 오면 된다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
