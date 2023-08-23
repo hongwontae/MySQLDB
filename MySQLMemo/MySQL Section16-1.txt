@@ -7,8 +7,52 @@ Over => 윈도우를 생성한다.
 () => 모든 행
 Over() => 모든 행을 포함하는 윈도우를 생성한다.
 
+원도우? => 그룹이라고 생각하면 된다.
+
 ex) select emp_no, salary, department, min(salary) over(), max(salary) over() from employees;
 집계 함수 옆에 윈도우 함수가 붙으면 집계 연산 결과를 모든 행에 옆에다 붙인다.
+
+
+3. Partition By
+Over()안에 사용된다./ 이를 사용하면 더 작은 다수의 윈도우를 만들 수 있게 된다.
+
+ex) select emp_no, salary, department, avg(salary) over(partition by department) from employees;
+=> Partition By는 사실 Group By의 대상이 된 것과 매우 유사하다. 단지 차이점은 그룹 바이는 중복된 행을 합쳐버리고 출력되지만 윈도우는 모든 행을 출력한다. 그래서 비교 연산에 매우 유용하다.
+
+
+4. Order By And Window
+Over()안에 order by를 하면 각 윈도우에 속한 행의 순서를 변경하라고 명령할 수 있다.
+
+롤링 합계 sum() over( order by )/ 롤링 최소값 min() over(order by)/ 롤링 평균 () over(order by) 
+=> order by는 계속 누적되고 누적된 결과가 출력된다.
+
+ex) select emp_no, salary, department, avg(salary) over(partition by department order by salary desc) as avg_department 
+=> salary의 값이 10이고 department 부서에 10이 존재하고 salary값이 10000~100000로 구성되어 있다고 가정하에 위의 쿼리에 대입해보면 
+1행의 avg값은 10000/1 =>10000
+2행의 avg값은 10000+20000 => 30000/2 => 15000
+3행의 avg값은 10000+20000+30000 => 60000/3 => 20000
+4행의 avg값은 10000+20000+30000+40000 => 100000/4 => 25000
+이런 로직이 된다는 것이다.
+
+
+5. Rank()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

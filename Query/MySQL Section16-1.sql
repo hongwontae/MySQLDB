@@ -47,6 +47,28 @@ select emp_no, salary, department, min(salary) over(), max(salary) over() from e
 
 
 
+-- Partition By
+select emp_no, salary, department, avg(salary) over(partition by department) as department_salary, avg(salary) over() as avg_company from employees;
+
+select emp_no, department, salary, round(avg(salary) over(partition by department),0) as department_salary, max(salary) over(partition by department) as avg_company from employees;
+
+select emp_no, department, salary, count(*) over(partition by department), sum(salary) over(partition by department) as department_salary, sum(salary) over() as avg_company from employees;
+
+
+
+-- Order By And Window
+select emp_no, salary, department, sum(salary) over(partition by department order by salary asc) as department_salary from employees;
+select emp_no, salary, department, sum(salary) over(partition by department order by salary desc) as department_salary from employees;
+
+select emp_no, salary, department, avg(salary) over(partition by department order by salary) as avg_department 
+,sum(salary) over(partition by department order by salary desc) as department_salary from employees;
+
+
+
+
+
+
+
 
 
 
