@@ -1,0 +1,50 @@
+1. Users Schema
+
+Create table users (
+  id integer primary key auto_increment,
+  username varchar(255) not null unique,
+  created_at timeStamp default now() or current_timestamp
+);
+
+
+2. Photos Schema
+Create table photos (
+  id int primary key auto_increment,
+  image_url varchar(255) not null,
+  user_id int,
+  created_at timestamp defalut now()/current_timestamp
+);
+
+
+
+3. Comment Shema
+Create table comments (
+  id int primary key auto_increment,
+  comment_text varchar(255) not null,
+  user_id int not null,
+  photo_id int not null,
+  Foreign key (user_id) references users(id),
+  Foreign Key (Photo_id) references photos(id)
+);
+
+=> Foreign Key의 제약조건은 외래키를 걸 때마다 ,로 구분을 해주어야 한다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
