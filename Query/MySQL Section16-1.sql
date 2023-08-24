@@ -70,6 +70,32 @@ select emp_no, salary, department, avg(salary) over(partition by department orde
 
 
 
+-- Rank()
+select emp_no, salary, department, rank() over(partition by department order by salary asc), 
+rank() over(order by salary asc) as department_salary from employees;
+
+select emp_no, salary, department, rank() over(partition by department order by salary asc), 
+rank() over(order by salary asc) as department_salary,
+rank() over(order by emp_no)
+from employees; -- 맨 마지막 order by의 힘이 윈도우 함수 order by내에서 제일 쎄다.
+
+select emp_no, salary, department, rank() over(partition by department order by salary asc), 
+rank() over(order by salary asc) as department_salary,
+rank() over(order by emp_no)
+from employees order by department; -- 맨 마지막에 붙은 order by가 제일 강력한 order by이다.
+
+
+
+-- Dense_Rank() And Row_Number()
+select emp_no, department, salary,
+rank() over(order by salary) as '순위1' -- Salary에 대한 순위를 매긴다./ 만약 orderby가 없으면 1로 출력된다.
+ -- 맨 마지막의 Partition By와 Order By가 우선순위이다.
+, row_number() over() -- 단지 옆에 행 번호를 출력해주는 것이다.
+, dense_rank() over() -- dense_rank()도 마찬가지로 order by가 없으면 1이 출력된다.
+, dense_rank() over(order by salary) -- dense_rank() => 중복된 순위가 있으면 그대로 출력하고 8,8 =>9로 가는 로직
+from employees
+;
+
 
 
 
