@@ -52,6 +52,34 @@ select * from comments;
 
 
 
+-- Likes Schema
+Create table likes (
+	user_id int not null,
+    photo_id int not null,
+    created_at timestamp default now(),
+	Foreign key(user_id) references users(id),
+    Foreign Key(Photo_id) references photos(id),
+    primary key(user_id, photo_id) -- 유저 아이디와 사진 id가 동일한 이미 존재하는 종아요를 삽입할 수 없다.
+);
+
+insert into likes (user_id, photo_id) values (1,1),(2,1),(1,2),(1,3),(3,3);
+insert into likes (user_id, photo_id) values (1,1); -- 불가능 pk는 유일해야 한다. => 중복x
+
+
+
+-- Follow Schema
+Create table follow (
+	follow_id int not null,
+    followee_id int not null,
+    created_at timeStamp default current_timestamp,
+    Foreign key(follow_id) references users(id),
+    Foreign Key(followee_id) references users(id),
+    primary key(follow_id, followee_id)
+);
+
+insert into follow (follow_id, followee_id) values (1,1),(1,2),(2,1),(2,3),(3,3);
+insert into follow (follow_id, followee_id) values (1,1); -- 불가능 pk 유일해야 하기 때문
+
 
 
 

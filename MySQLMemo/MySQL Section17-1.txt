@@ -30,6 +30,56 @@ Create table comments (
 => Foreign Key의 제약조건은 외래키를 걸 때마다 ,로 구분을 해주어야 한다.
 
 
+4. Likes Schema
+다른 곳에서 이 테이블을 조회하지 않기 때문에 id 형태의 pk는 필요가 없다.
+고려해야 할 점은 '어떻게 한 게시글 사진에 하나의 좋아요만 누를 수 있게 하느냐?' 이다.
+pk를 user_id와 photo_id의 조합으로 하면 두 개의 값이 유일성을 가져야 하기 때문에 조건이 충족된다.
+
+Create table likes (
+  user_id int,
+  photo_id int,
+  created_at timeStamp default now(),
+  Foreign Key(user_id) references users(id),
+  Foreign Key(photo_id) references photos(id),
+  Primary Key(user_id, Photo_id)
+);
+
+
+5. Follow Schema
+Create table follow (
+	follow_id int not null,
+    followee_id int not null,
+    created_at timeStamp default current_timestamp,
+    Foreign key(follow_id) references users(id),
+    Foreign Key(followee_id) references users(id),
+    primary key(follow_id, followee_id)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
