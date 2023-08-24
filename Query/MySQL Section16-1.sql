@@ -96,6 +96,13 @@ rank() over(order by salary) as '순위1' -- Salary에 대한 순위를 매긴�
 from employees
 ;
 
+select emp_no, department, salary,
+rank() over(partition by department order by salary) as '순위1',
+rank() over(order by salary) as '순위2'
+from employees
+;
+
+
 
 
 
