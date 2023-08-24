@@ -21,6 +21,16 @@ from employees; -- over()의 매개변수에 아무것도 없으면 1반환 (마
 
 
 
+-- Lead() And Lag()
+select emp_no, department, salary,
+lead(salary) over(), -- 다음 행의 데이터를 가져온다.
+lag(salary) over() -- 전의 행의 데이터를 가져온다.
+from employees;
+
+select emp_no, department, salary,
+lead(salary) over(partition by department order by salary desc),
+lead(salary) over(order by salary desc)
+from employees;
 
 
 
