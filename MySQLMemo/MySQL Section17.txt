@@ -56,7 +56,34 @@ Create table follow (
 );
 
 
+6. Hash Tag Table
 
+6-1. Photos의 테이블의 칼럼에 Hash Tag를 넣어버리는 방법
+구현이 쉽다. 그러나 태그의 길이가 방대해지고 해시 태그의 부가 정보를 담을 수 없다는 단점이 있다. 또한 like로 검색할 때 까다롭다. ( ex)tag => #like, #likes, #like2 )
+
+6-2. 두 개의 테이블을 사용한다.
+Photo테이블의 id를 외래키로 가지는 Tags Schema를 생성한다.
+Insert, Update, Delete 작업이 느리다. 성능이 낮다.
+
+6-3. 세 개의 테이블을 사용한다.
+Photos, Tags 테이블이 존재하고 중간에 조인 테이블이 위치한다.
+테이블의 추가 정보나, 중복 문제 해결, 성능 저하 해결까지 된다. 그러나 조금 복잡하다.
+
+=> 성능 문제 때문에 2번째 방법은 거의 사용되지 않는다. 1,3번의 방법을 주로 사용한다.
+
+Create table tags(
+	id int primary key auto_increment,
+    tag_name varchar(255),
+    created_at timestamp default current_timestamp
+);
+
+Create table photo_tags(
+	photo_id int not null,
+    tag_id int not null,
+    Foreign key (photo_id) references photos(id),
+    Foreign Key (tag_id) references tags(id),
+    Primary Key (photo_id, tag_id)
+);
 
 
 
