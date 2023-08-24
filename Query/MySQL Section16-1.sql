@@ -57,11 +57,18 @@ select emp_no, department, salary, count(*) over(partition by department), sum(s
 
 
 -- Order By And Window
-select emp_no, salary, department, sum(salary) over(partition by department order by salary asc) as department_salary from employees;
-select emp_no, salary, department, sum(salary) over(partition by department order by salary desc) as department_salary from employees;
+select emp_no, salary, department,sum(salary) over(partition by department), 
+sum(salary) over(partition by department order by salary asc) as department_salary from employees;
 
-select emp_no, salary, department, avg(salary) over(partition by department order by salary) as avg_department 
+select emp_no, salary, department,
+sum(salary) over(partition by department order by salary desc) as department_salary from employees;
+
+select emp_no, salary, department, avg(salary) over(partition by department order by salary desc) as avg_department 
 ,sum(salary) over(partition by department order by salary desc) as department_salary from employees;
+
+-- order by asc/desc를 해도 롤링로직은 변하지 않는다./ 다만 salary asc는 salary가 가장 낮은 것부터 더해서 총 값을/ salary desc는 salary가 가장 높은 곳부터 더해서 총 값을 낸다.
+
+
 
 
 

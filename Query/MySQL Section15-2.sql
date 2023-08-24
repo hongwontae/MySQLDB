@@ -4,7 +4,7 @@ use mysqlud;
 
 -- Having
 select title, count(rating) as Count from reviews_join group by title Having count(rating)>3;
-select title, count(rating) as Count, round(avg(rating),2) as Rating from reviews_join group by title Having count(rating)>3 and Rating>8;
+select title, count(rating) as Count, round(avg(rating),2) as Rating from reviews_join group by title Having count(rating)>3 and Rating<8;
 
 
 

@@ -24,7 +24,7 @@ Set Session sql_mode = '모드 이름' => 현재 세션 모드 설정하는 방�
 ERROR_FOR_DIVISION_BY_ZERO => 0으로 숫자를 나누었을 때 뜨는 경고 설정
 이 모드를 삭제하고 select 3/0를 실행하면 Null이 출력된다.
 
-Strict_Trans_Tables => Insert, Update을 실행할 때 유효하지 않거나 누락된 값을 처리하는 방식을 제어하는 설정
+Strict_Trans_Tables => Insert, Update을 실행할 때 유효하지 않거나 누락된 값을 처리하는 방식을 제어하는 설정/ Select은 가능
 만약 Strict_Trans_Tables을 제거하고 decimal 데이터 타입인 Rating에 문자열을 넣으면 경고를 띄우고 삽입이 된다. 값은 0.0
 => 데이터 타입 유효성 검사
 

@@ -35,7 +35,7 @@ ex) select emp_no, salary, department, avg(salary) over(partition by department 
 이런 로직이 된다는 것이다.
 
 
-5. Rank()
+=> order by asc/desc를 해도 롤링로직은 변하지 않는다./ 다만 salary asc는 salary가 가장 낮은 것부터 더해서 총 값을/ salary desc는 salary가 가장 높은 곳부터 더해서 총 값을 낸다.
 
 
 

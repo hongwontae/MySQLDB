@@ -11,4 +11,8 @@ from reviews_join group by released_year, genre, first_name with rollup;
 
 => 각 칼럼에 그룹바이를 했다. 그 결과는 first_name, released_year, genre가 한 데이터라 치고 그것과 중복되는 것을 모은 것이다. 여러 칼럼으로 group by를 하면 rollUp은 각 그룹함수 데이터 더미의 집계를 낸다. 
 first_name과 released_year이 같을 떄의 집계함수의 값 (genre 제외하고)/ released_year과 genre가 같을 때 집계 함수의 값, first_name만 있을 때 집계함수의 값
+
 => 만약에 count(*)가 1이라면 위처럼 중복됨으로 하나만 계산한다.
+
+=> With Rollup과 Over(Order By)와 비슷하다./ Group By의 대상이 된 칼럼이 많을 수록 With RollUp이 복잡해진다.
+if Group By를 이름, 나이, 년도로 했을 떄 이름-나이-년도가 같은 행이 중복이 된 것을 한 행으로 잡는데 그룹 바이의 대상인 칼럼이 많을수록 중복이 없기 때문에 With Rollup 자체 대상도 늘어나고 with rollup의 로직은 그룹별로 통계를 내는 것뿐만 아니라 이름통계/ 이름-년도 통계.. => 증가한다.
