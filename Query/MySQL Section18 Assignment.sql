@@ -46,7 +46,30 @@ left join photos on users.id = photos.user_id order by users.id;
 -- 성공
 select (select count(*) from photos) / (select count(*) from users) as avg;
 
--- 6
+-- 6 가장 많이 사용되는 해시태그 5개를 찾아라
+select * from tags;
+select * from photo_tags;
+
+select tag_name, tags.id, count(tag_name)as total from tags
+Inner join photo_tags on tags.id = photo_tags.tag_id
+group by tag_name, tags.id order by total desc limit 5;
+
+-- 7 게시물은 올리지 않는데 likes만 누르는 계정 찾기
+
+-- 실패
+select count(users.id) from users
+left join likes on users.id = likes.user_id
+where photo_id is not null order by username;
+
+-- 성공 쿼리
+SELECT username, 
+       Count(*) AS num_likes 
+FROM   users 
+       INNER JOIN likes 
+               ON users.id = likes.user_id 
+GROUP  BY likes.user_id 
+HAVING num_likes = (SELECT Count(*) 
+                    FROM   photos); 
 
 
 
