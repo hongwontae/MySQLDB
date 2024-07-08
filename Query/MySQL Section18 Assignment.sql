@@ -70,6 +70,8 @@ FROM   users
 GROUP  BY likes.user_id 
 HAVING num_likes = (SELECT Count(*) 
                     FROM   photos); 
+                    
+
 
 
 
