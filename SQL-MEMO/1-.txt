@@ -1,4 +1,0 @@
-1. DB 생성 명령어 : Create Database 생성할-db-name
-
-2. set as default schema : use db-이름
-

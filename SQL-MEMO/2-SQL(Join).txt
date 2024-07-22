@@ -1,0 +1,13 @@
+1. JOIN
+=> 여러 테이블의 데이터를 결합하여 원하는 정보를 조회할 때 사용됩니다. 
+
+
+2. 조인의 종류
+INNER JOIN
+LEFT JOIN (LEFT OUTER JOIN)
+RIGHT JOIN (RIGHT OUTER JOIN)
+FULL JOIN (FULL OUTER JOIN)
+CROSS JOIN
+
+
+3. Inner Join : 두 테이블 간에 일치하는 레코드만 반환한다.
